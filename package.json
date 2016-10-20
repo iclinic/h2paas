@@ -1,0 +1,35 @@
+{
+  "name": "pas",
+  "version": "1.0.0",
+  "description": "A rest service to render pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guidiego/pas.git"
+  },
+  "keywords": [
+    "pdf",
+    "restify",
+    "nodejs",
+    "es6"
+  ],
+  "author": "Guilherme Diego <guidiego.expgames@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guidiego/pas/issues"
+  },
+  "homepage": "https://github.com/guidiego/pas#readme",
+  "dependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "html-pdf": "^2.1.0",
+    "request": "^2.75.0",
+    "uid": "0.0.2"
+  }
+}
