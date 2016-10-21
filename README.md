@@ -33,7 +33,7 @@ npm start
 **Body Example**:  
 ```js
     {
-        "template": "<div> This is a test for h2pass",
+        "template": "<div> This is a test for h2pass </div>",
         "options": {}
     }
 ```

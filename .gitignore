@@ -2,7 +2,10 @@
 logs
 *.log
 npm-debug.log*
+
+#h2paas
 tmp
+configure.sh
 
 # Runtime data
 pids
