@@ -26,11 +26,11 @@ If you want we have a `Dockerfile` to create a container for you :)
 ```
 
 docker build -t h2paas `pwd`
-# For integration with AWS S3 add that before `pwd`
-# --build-arg aws_keyid=<Your Access Key Id Here> --build-arg aws_secret_key=<Your Secret Access Key Here>
-# If you change the ports in settings js you need pass --build-env port=<The Port>
 
 docker run -i -t -p 3000:3000 h2paas
+# For integration with S3 you need to setup the global variables, insert next line before -p
+# -e AWS_ACCESS_KEY_ID=<Your Access Key Id Here> -e AWS_SECRET_ACCESS_KEY=<Your Secret Access Key Here>
+# If you wnat to expose another port add -e PORT=<The Port>
 # Not forget to change 3000:3000 in case of change ports :)
 
 ```

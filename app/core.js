@@ -6,7 +6,7 @@ import { baseHtml2PDFConfig } from './settings'
 export const createPDF = (html, options, callback) => {
     options = Object.assign({}, baseHtml2PDFConfig, options);
     
-    html2pdf.create(html, options).toFile(`./tmp/${uid()}.pdf`, callback)
+    html2pdf.create(html, options).toFile(`.${baseHtml2PDFConfig.directory}/${uid()}.pdf`, callback)
 }
 
 export const genericResponse = (res) => (err, r) => {

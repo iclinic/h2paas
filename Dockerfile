@@ -1,20 +1,23 @@
 FROM node
 
-ARG aws_keyid
-ARG aws_secret_key
+ENV AWS_ACCESS_KEY_ID ''
+ENV AWS_SECRET_ACCESS_KEY ''
+ENV PORT 3000
 
-ENV port=3000
+RUN mkdir /h2pass
 
-ADD . /h2paas
+ADD ./app /h2paas/app
+ADD ./package.json /h2paas
+ADD ./.babelrc /h2paas
+ADD ./configure.sh /h2paas
 
 RUN cd /h2paas \
+	&& apt-get install libfontconfig \
 	&& npm install \
 	&& chmod +x ./configure.sh \
-	&& ./configure.sh \
-	&& export AWS_ACCESS_KEY_ID=$aws_keyid \
-	&& export AWS_SECRET_ACCESS_KEY=$aws_secret_key
+	&& ./configure.sh 
 
 WORKDIR /h2paas
 
-EXPOSE $port
+EXPOSE $PORT
 CMD ["npm", "start"]
