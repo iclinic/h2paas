@@ -26,6 +26,6 @@ export const urlReq = (req, res, next, callback = genericResponse) => {
 
     request(url, function (error, { statusCode }, body) {
         if (!error && statusCode == 200) 
-        createPDF(body, options, callback(res, req.query))
+            createPDF(body, options, callback(res, req.query))
     }) 
 }
