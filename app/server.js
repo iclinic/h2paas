@@ -8,7 +8,7 @@ import { s3TemplateReq, s3UrlReq } from './s3'
 const server = express();
 
 // Add Body Parser Support
-server.use(bodyParser());
+server.use(bodyParser.json());
 
 server.post("/pdf/template", templateReq)
 server.post("/pdf/url", urlReq)
