@@ -1,8 +1,8 @@
 ![HTML to PDF as a service](http://imgur.com/2LHbx9b.png)
 
-HTML to PDF as a service *(H2PAAS)* it's a microservice in **nodeJS** created like option for developers that have some problems with PDF libraries like `wkhtmltopdf`.  
+HTML to PDF as a service *(H2PAAS)* it's a microservice in **nodeJS** for developers that have some problems with PDF libraries like `wkhtmltopdf`.  
 
-We create that the most generic as possible, but the library it's totally open source and you can contribute with what you need/want! We are waiting your PR :heart:  
+We created this the most generic as possible, but the library it's totally open source and you can contribute with what you need/want! We are waiting your PR :heart:  
 
 ## Running
 
@@ -30,13 +30,12 @@ docker build -t h2paas `pwd`
 docker run -i -t -p 3000:3000 h2paas
 # For integration with S3 you need to setup the global variables, insert next line before -p
 # -e AWS_ACCESS_KEY_ID=<Your Access Key Id Here> -e AWS_SECRET_ACCESS_KEY=<Your Secret Access Key Here>
-# If you wnat to expose another port add -e PORT=<The Port>
+# If you want to expose another port add -e PORT=<The Port>
 # Not forget to change 3000:3000 in case of change ports :)
 
 ```
 
-### ALERT
-**Don't commit your KEYS!**, we are using that like enviroment variables for some motive :) Be in alert to publicate your images into Dockerhub with your secret keys!
+### Don't commit your KEYS! BE IN ALERT!
 
 ## Settings
 Inside `/app` we have a `settings.js` file with some configurations that may you want to change :)
