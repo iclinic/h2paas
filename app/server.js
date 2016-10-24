@@ -1,43 +1,19 @@
 import express from 'express'
-import html2pdf from 'html-pdf'
-import request from 'request'
-import uid from 'uid'
 import bodyParser from 'body-parser'
 
-import { baseHtml2PDFConfig } from './settings'
+import { templateReq, urlReq } from './core'
+import { s3TemplateReq, s3UrlReq } from './s3'
 
-export const server = express();
-export const createPDF = (html, options, callback) => {
-    options = Object.assign({}, baseHtml2PDFConfig, options);
-    
-    html2pdf.create(html, options).toFile(`./tmp/${uid()}.pdf`, callback)
-}
+// Init Express Server
+const server = express();
 
+// Add Body Parser Support
 server.use(bodyParser());
 
-server.post("/generate/template", (req, res) => {
-    const { template, options = {} } = req.body;
-    const response = (err, r) => {
-        if (err) throw err
-        
-        res.sendFile(r.filename)
-    }
-    
-    createPDF(template, options, response)
-})
+server.post("/pdf/template", templateReq)
+server.post("/pdf/url", urlReq)
 
-server.post("/generate/url", (req, res) => {
-    const { url, options = {} } = req.body;
-    const response = (err, r) => {
-        if (err) throw err
-        
-        res.sendFile(r.filename)
-    }
-    
-    request(url, function (error, { statusCode }, body) {
-      if (!error && statusCode == 200) 
-        createPDF(body, options, response)
-    })
-})
+server.post("/pdf/s3/template", s3TemplateReq)
+server.post("/pdf/s3/url", s3UrlReq)
 
 export default server

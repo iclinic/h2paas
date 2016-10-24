@@ -1,5 +1,5 @@
 import server from './server';
-import { appConfig } from './settings.js'
+import { HOST, PORT } from './settings.js'
 
 //TODO: Clusterize
-server.listen(appConfig.PORT, appConfig.HOST)
+server.listen(PORT, HOST)

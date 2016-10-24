@@ -1,5 +1,5 @@
 {
-  "name": "pas",
+  "name": "h2paas",
   "version": "1.0.0",
   "description": "A rest service to render pdf",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guidiego/pas.git"
+    "url": "git+https://github.com/guidiego/h2paas.git"
   },
   "keywords": [
     "pdf",
@@ -20,9 +20,9 @@
   "author": "Guilherme Diego <guidiego.expgames@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guidiego/pas/issues"
+    "url": "https://github.com/guidiego/h2paas/issues"
   },
-  "homepage": "https://github.com/guidiego/pas#readme",
+  "homepage": "https://github.com/guidiego/h2paas#readme",
   "dependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
@@ -30,6 +30,7 @@
     "express": "^4.14.0",
     "html-pdf": "^2.1.0",
     "request": "^2.75.0",
-    "uid": "0.0.2"
+    "uid": "0.0.2",
+    "aws-sdk": "^2.6.11"
   }
 }
