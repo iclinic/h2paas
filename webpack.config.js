@@ -9,6 +9,9 @@ module.exports = {
   externals: {
     'aws-sdk': 'aws-sdk'
   },
+  resolve: {
+
+  },
   module: {
     loaders: [
       {

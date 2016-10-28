@@ -19,7 +19,10 @@ export const s3EmitPDF = (res, {bucket = DEFAULT_BUCKET, acl = ACL_DEFAULT}) => 
 		s3.upload({ACL: acl, Bucket: bucket, Key: name, Body: buffer}, (err, data) => {
 			if (err) throw err;
 
-			res.json(data)
+			if (res.json)
+				return res.json(data)
+		
+			res.done(data)
 		});
 	});
 }

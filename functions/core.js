@@ -1,12 +1,12 @@
 import html2pdf from 'html-pdf'
 import request from 'request'
 import uid from 'uid'
-import { baseHtml2PDFConfig } from './settings'
+import { H2P_CONFIG } from './settings'
 
 export const createPDF = (html, options, callback) => {
-    options = Object.assign({}, baseHtml2PDFConfig, options);
+    options = Object.assign({}, H2P_CONFIG, options);
     
-    html2pdf.create(html, options).toFile(`.${baseHtml2PDFConfig.directory}/${uid()}.pdf`, callback)
+    html2pdf.create(html, options).toFile(`.${H2P_CONFIG.directory}/${uid()}.pdf`, callback)
 }
 
 export const genericResponse = (res) => (err, r) => {

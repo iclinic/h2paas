@@ -6,10 +6,11 @@ ENV PORT 3000
 
 RUN mkdir /h2pass
 
-ADD ./app /h2paas/app
+ADD ./functions /h2paas/functions
 ADD ./package.json /h2paas
 ADD ./.babelrc /h2paas
 ADD ./configure.sh /h2paas
+ADD ./index.js /h2paas
 
 RUN cd /h2paas \
 	&& apt-get install libfontconfig \

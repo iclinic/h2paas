@@ -6,6 +6,10 @@ export const S3_API_VERSION = '2006-03-01'
 export const PORT = 3000
 export const HOST = '0.0.0.0'
 
+export const H2P_CONFIG = {
+	directory: '/tmp'
+}
+
 export default {
 	ALLOW_ORIGIN,
 	DEFAULT_BUCKET,
@@ -14,4 +18,5 @@ export default {
 	S3_API_VERSION,
 	PORT,
 	HOST,
+	H2P_CONFIG
 }
