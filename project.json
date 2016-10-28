@@ -1,0 +1,11 @@
+{
+  "name": "H2PAAS",
+  "description": "Html to PDF as a service",
+  "role": "arn:aws:iam::<yourid>:<yourrole>/apex_lambda_function",
+  "runtime": "nodejs",
+  "handler": "lib.default",
+  "hooks": {
+    "build": "../../node_modules/.bin/webpack --config ../../webpack.config.js",
+    "clean": "rm -fr lib"
+  }
+}
