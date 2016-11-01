@@ -5,6 +5,8 @@ npm-debug.log*
 
 #h2paas
 tmp
+project*json
+lib
 
 # Runtime data
 pids
